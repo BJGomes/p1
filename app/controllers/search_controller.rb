@@ -1,7 +1,8 @@
 class SearchController < ApplicationController
 
 	def index
-		@ola = "hello from SearchController"
+		user = User.take
+		@ola = user.email
 	end
 
 end
