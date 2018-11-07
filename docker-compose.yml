@@ -7,10 +7,10 @@ services:
   web:
     build: .
     command: >
-      bash -c "bundle exec rails s -p 3000 -b '0.0.0.0'
-      && rake db:create
-      && rails generate devise user
-      && rails db:migrate RAILS_ENV=development"
+      bash -c "rake db:create
+      && chmod +x bin/rails
+      && bin/rails db:migrate RAILS_ENV=development
+      && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/myapp
     ports:

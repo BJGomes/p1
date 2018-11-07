@@ -1,0 +1,23 @@
+<fieldset>
+    <legend> Insert new company </legend>
+	<%= form_for @ypentry do |f| %>
+		<%= label_tag(:name, "Name: ") %>
+		<%= f.text_field :name %>
+		<%= label_tag(:phone, "Phone: ") %>
+		<%= f.text_field :phone %></br>
+		<%= label_tag(:address, "Address: ") %>
+		<%= f.text_field :address %>
+		<%= label_tag(:zip, "Zip code: ") %>
+		<%= f.text_field :zip %></br>
+		<%= label_tag(:parish, "Parish: ") %>
+		<%= f.text_field :parish %>
+		<%= f.submit %>
+	<% end %>
+</fieldset>
+
+<% if !@ypentries.nil? %>
+	<fieldset>
+	    <legend> Edit / Delete </legend>
+	    <%= render 'ypform' %>
+	</fieldset>
+<% end %>

@@ -19,6 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'pagy', '~> 0.21.0'
+gem 'best_in_place', '~> 3.0.1'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
