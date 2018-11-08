@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 	include Pagy::Backend
 
-	def after_sign_in_path_for(resource)
+	def after_sign_in_path_for(*)
 		new_ypentry_path
 	end
 
