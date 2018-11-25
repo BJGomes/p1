@@ -5,3 +5,8 @@
 .item img { width: 100%; }
 .carousel { position: relative; width: 80%; margin: 0 auto; }
 .container { width: auto; }
+.outer_ul, .inner_ul { list-style: none; padding-left: 0px; }
+.outer_ul { width: 80%; margin: 0 auto; }
+.inner_ul { border-bottom: 1px solid #000; }
+.inner_ul li:last-child { margin-bottom: 20px; }
+h2 { text-align: center; }

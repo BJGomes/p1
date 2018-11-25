@@ -7,11 +7,8 @@ class YpentriesController < ApplicationController
 		    @pagy, @ypentries = pagy(Ypentry.all, items: 3)
 	  end
 
-	  # GET method to get a product by id
-	  # rendered in ypentries/show. Currently not implemented.
   	def show
   		  puts "Class: YpentriesController, method: show, params: id->" + params[:id]
-    	  #@product = Product.find(params[:id])
   	end
 
   	def new
@@ -22,8 +19,11 @@ class YpentriesController < ApplicationController
 
 	  def create
 		    puts "Class: YpentriesController, method: create"
+        results = Geocoder.search("Paris")
+        puts results.first.coordinates
 		    @ypentry = Ypentry.new(ypentry_params)
 		    if @ypentry.save
+            # redirect_to does not allow resubmition of POST form
 			      redirect_to new_ypentry_path, flash: {notice: "Successfully inserted"}
 		    else
 			      flash[:alert] = "Some errors were found!"
@@ -31,13 +31,11 @@ class YpentriesController < ApplicationController
 		    end
 	  end
 
-	  # GET method for editing a product based on id
   	def edit
   		  puts "Class: YpentriesController, method: edit"
     	  @ypentry = Ypentry.find(params[:id])
   	end
 
-  	# PUT method for updating in database a product based on id
   	def update
   		  puts "Class: YpentriesController, method: update"
     	  @ypentry = Ypentry.find(params[:id])
@@ -45,7 +43,6 @@ class YpentriesController < ApplicationController
       	respond_with @ypentry
   	end
  
- 	  # DELETE method for deleting a product from database based on id
   	def destroy
   		  puts "Class: YpentriesController, method: destroy, params: id->" + params[:id]
     	  @ypentry = Ypentry.find(params[:id])

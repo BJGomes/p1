@@ -21,6 +21,8 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'pagy', '~> 0.21.0'
 gem 'best_in_place', '~> 3.0.1'
+gem 'geocoder'
+gem 'gmaps4rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

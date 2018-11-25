@@ -91,8 +91,10 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    geocoder (1.5.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    gmaps4rails (2.1.2)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -226,6 +228,8 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  geocoder
+  gmaps4rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

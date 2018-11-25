@@ -1,0 +1,15 @@
+<% if !ypentries.nil? %>
+    <ul class="outer_ul">
+        <% @ypentries.each do |ypentry| %>
+            <li>
+                <ul class="inner_ul">
+                    <li><%= ypentry.name %></li>
+                    <li><%= ypentry.phone %></li>
+                    <li><%= ypentry.address %></li>
+                    <li><%= ypentry.zip %></li>
+                </ul></br>
+            </li>
+        <% end %>
+    </ul>
+    <%== pagy_nav_bootstrap(@pagy) %>
+<% end %>
