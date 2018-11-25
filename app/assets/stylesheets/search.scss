@@ -6,7 +6,8 @@
 .carousel { position: relative; width: 80%; margin: 0 auto; }
 .container { width: auto; }
 .outer_ul, .inner_ul { list-style: none; padding-left: 0px; }
-.outer_ul { width: 80%; margin: 0 auto; }
+.outer_ul, .map { width: 80%; margin: 0 auto; margin-top: 20px; }
 .inner_ul { border-bottom: 1px solid #000; }
 .inner_ul li:last-child { margin-bottom: 20px; }
 h2 { text-align: center; }
+#rails_map { width: 100%; height: 300px; }

@@ -1,15 +1,6 @@
 class SearchesController < ApplicationController
 	respond_to :html, :json
 
-	def index
-		@search = search.all
-		@hash = Gmaps4rails.build_markers(@search) do |search, marker|
-  			marker.lat search.latitude
-  			marker.lng search.longitude
-  			#para adicionar desciçao marker.infowindow search.description
-		end
-	end
-
 	def new
 		puts "Class: SearchesController, method: new"
 		@name, @place = params[:name], params[:place]

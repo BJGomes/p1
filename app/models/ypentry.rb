@@ -6,7 +6,7 @@ class Ypentry < ApplicationRecord
 	validates :zip, presence: true
 	validates :parish, presence: true
 	
-	geocoded_by :parish
+	geocoded_by :address
 	after_validation :geocode
 	
 	def full_address
