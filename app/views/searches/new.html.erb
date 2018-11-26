@@ -12,7 +12,8 @@
 
 <fieldset>
     <legend> Most Searched Results </legend>
-    <%= render 'carousel', :img1 => "r1", :img2 => "r2", :img3 => "r3" %>
+    <% img1, img2, img3 = @most_searched[0].name, @most_searched[1].name, @most_searched[2].name %>
+    <%= render 'carousel', :img1 => img1, :img2 => img2, :img3 => img3 %>
 </fieldset>
 
 <h2>Results for: <b><%= @name %></b> in: <b><%= @place %></b></h2>
