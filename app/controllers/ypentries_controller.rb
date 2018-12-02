@@ -5,6 +5,7 @@ class YpentriesController < ApplicationController
 	  def index
 		    puts "Class: YpentriesController, method: index"
 		    @pagy, @ypentries = pagy(Ypentry.all, items: 3)
+        # respond_with @ypentries
 	  end
 
   	def show
@@ -19,14 +20,11 @@ class YpentriesController < ApplicationController
 
 	  def create
 		    puts "Class: YpentriesController, method: create"
-        results = Geocoder.search("Paris")
-        puts results.first.coordinates
 		    @ypentry = Ypentry.new(ypentry_params)
 		    if @ypentry.save
-            # redirect_to does not allow resubmition of POST form
 			      redirect_to new_ypentry_path, flash: {notice: "Successfully inserted"}
 		    else
-			      flash[:alert] = "Some errors were found!"
+			      flash[:alert] = @ypentry.errors.full_messages
   			    render "new"
 		    end
 	  end

@@ -1,6 +1,6 @@
 class Ypentry < ApplicationRecord
 
-	validates :name, presence: true
+	validates :name, presence: true, length: { minimum: 3 }
 	validates :phone, presence: true
 	validates :address, presence: true
 	validates :zip, presence: true

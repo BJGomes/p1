@@ -4,21 +4,17 @@ class SearchesController < ApplicationController
 	def new
 		puts "Class: SearchesController, method: new"
 		@name, @place = params[:name], params[:place]
-		
 		if !@name.blank? or !@place.blank?
 			@pagy, @ypentries = pagy(Ypentry.by_name_or_place(@name, @place), items: 3)
 		end
-
 		if (!@ypentries.nil?)
-			@hash = Gmaps4rails.build_markers(@ypentries) do |search, marker|
-  				marker.lat search.latitude
-  				marker.lng search.longitude
-  				#para adicionar desciçao marker.infowindow search.description
+			@hash = Gmaps4rails.build_markers(@ypentries) do |ypentry, marker|
+  				marker.lat ypentry.latitude
+  				marker.lng ypentry.longitude
+  				marker.infowindow ypentry.name
   			end
 		end
-
 		@most_searched = Search.most_searched
-
 		@search = Search.new
 	end
 

@@ -29,14 +29,4 @@ $(document).ready(function() {
   jQuery(".best_in_place").best_in_place();
 });
 
-<script type="text/javascript">
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'rails_map'}}, function()
-    {
-        markers = handler.addMarkers(<%=raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-    });
-</script>
-
 

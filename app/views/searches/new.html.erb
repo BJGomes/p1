@@ -12,8 +12,12 @@
 
 <fieldset>
     <legend> Most Searched Results </legend>
-    <% img1, img2, img3 = @most_searched[0].name, @most_searched[1].name, @most_searched[2].name %>
-    <%= render 'carousel', :img1 => img1, :img2 => img2, :img3 => img3 %>
+    <% begin %>
+        <% img1, img2, img3 = @most_searched[0].name, @most_searched[1].name, @most_searched[2].name %>
+        <%= render 'carousel', :img1 => img1, :img2 => img2, :img3 => img3 %>
+    <% rescue %>
+        <%= render 'carousel', :img1 => "def", :img2 => "def", :img3 => "def" %>
+    <% end %>
 </fieldset>
 
 <h2>Results for: <b><%= @name %></b> in: <b><%= @place %></b></h2>
@@ -22,6 +26,6 @@
     <div id="rails_map"></div>
 </div>
 
-<%= render 'mapscripts' %>
-
 <%= render 'results', :ypentries => @ypentries %>
+
+<%= render 'mapscripts' %>
